@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:3000/# -->
+<html lang="en" class="gr__localhost"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style type="text/css">body {
+  background: #221f1f;
+  color: #ffffff;
+  font-family: "Lato", sans-serif; }
+
+ul {
+  list-style-type: none; }
+
+.flex-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between; }
+
+.flex-left {
+  justify-content: flex-start; }
+
+.flex-center {
+  justify-content: center; }
+
+.flex-right {
+  justify-content: flex-end;
+  -webkit-padding-end: 40px;
+          padding-inline-end: 40px; }
+
+h2, .TitleList .Title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1em; }
+
+p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1em; }
+
+.Header {
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, black 0%, rgba(0, 0, 0, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+  /* IE6-9 */
+  background: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  z-index: 5; }
+
+.Logo {
+  width: 200px;
+  height: 25px; }
+
+.moive-db {
+  width: 80px;
+  height: 25px; }
+
+a:-webkit-any-link {
+  color: white;
+  cursor: pointer;
+  text-decoration: unset; }
+
+.Navigation ul {
+  display: flex;
+  height: 37px;
+  align-items: center;
+  padding: 0 10px; }
+  .Navigation ul li {
+    font-weight: 600;
+    font-family: courier;
+    list-style: none;
+    padding: 7px 10px;
+    font-size: 14px;
+    -webkit-transition: background .125s ease;
+    transition: background .125s ease;
+    border-radius: 3px; }
+    .Navigation ul li:hover {
+      color: #00cf72;
+      cursor: pointer; }
+
+.UserProfile {
+  margin-left: auto; }
+  .UserProfile .User {
+    display: flex; }
+    .UserProfile .User .image {
+      border-radius: 44px;
+      margin-left: 10px;
+      overflow: hidden;
+      width: 44px;
+      height: 44px;
+      box-sizing: border-box;
+      border: 3px solid transparent;
+      -webkit-transition: border .125s ease;
+      transition: border .125s ease; }
+      .UserProfile .User .image img {
+        width: 100%;
+        display: block; }
+    .UserProfile .User .name {
+      align-items: center;
+      display: flex;
+      font-size: 18px;
+      font-weight: 300;
+      height: 44px; }
+    .UserProfile .User:hover {
+      cursor: pointer; }
+      .UserProfile .User:hover .image {
+        border: 3px solid #00cf72; }
+  .UserProfile .UserProfile-menu {
+    display: none; }
+
+.Hero {
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  min-height: 500px; }
+  .Hero .content {
+    position: relative;
+    z-index: 4;
+    width: 500px;
+    left: 10vw;
+    top: 10vw; }
+    .Hero .content .logo {
+      max-width: 400px;
+      display: block;
+      position: relative;
+      left: -5px; }
+    .Hero .content p {
+      width: 100%; }
+    .Hero .content .button-wrapper {
+      display: flex;
+      width: 400px;
+      margin-top: 30px; }
+      .Hero .content .button-wrapper .Button:first-child {
+        margin-right: 10px; }
+  .Hero .overlay {
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #221f1f 0%, rgba(34, 31, 31, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #221f1f 0%, rgba(34, 31, 31, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+    /* IE6-9 */
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+
+.Button {
+  background: transparent;
+  display: flex;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid rgba(245, 245, 241, 0.2);
+  border-radius: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  -webkit-transition: border .125s ease, background .125s ease;
+  transition: border .125s ease, background .125s ease; }
+  .Button:hover {
+    border: 2px solid #f5f5f1; }
+  .Button[data-primary='true'] {
+    border: 2px solid #00cf72; }
+    .Button[data-primary='true']:hover {
+      background: #00cf72;
+      color: black; }
+
+.Hero ~ .TitleList:nth-child(3) {
+  margin-top: -10vw;
+  position: relative;
+  z-index: 4; }
+
+.TitleList {
+  padding: 20px 40px;
+  box-sizing: border-box;
+  -webkit-transition: opacity 3s ease;
+  transition: opacity 3s ease;
+  opacity: 0; }
+  .TitleList .titles-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    width: calc(100vw - 80px);
+    box-sizing: border-box;
+    justify-content: space-between; }
+  .TitleList[data-loaded='true'] {
+    opacity: 1; }
+
+.Movie {
+  width: calc(20% - 10px);
+  min-width: calc(20% - 10px);
+  text-align: center;
+  color: white;
+  flex: 1 0 auto;
+  background-position: center;
+  background-size: 40%;
+  height: 300px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  -webkit-transition: background 1s ease;
+  transition: background 1s ease; }
+  .Movie:nth-child(n+6) {
+    margin-top: 20px; }
+  .Movie:last-child {
+    margin-right: 0; }
+  .Movie .overlay {
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+    /* IE6-9 */
+    padding: 20px;
+    position: relative;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: opacity .125s ease;
+    transition: opacity .125s ease; }
+    .Movie .overlay .title {
+      font-size: 22px;
+      font-weight: 200;
+      opacity: 0;
+      -webkit-transition: opacity .25s ease;
+      transition: opacity .25s ease; }
+    .Movie .overlay .rating {
+      font-size: 14px;
+      opacity: 0;
+      -webkit-transition: opacity .25s ease .125s;
+      transition: opacity .25s ease .125s; }
+    .Movie .overlay .plot {
+      font-size: 14px;
+      display: -webkit-box;
+      margin-top: 100px;
+      font-weight: 300;
+      line-height: 1.6;
+      opacity: 0;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-transition: margin .25s ease .125s, opacity .25s ease .25s;
+      transition: margin .25s ease .125s, opacity .25s ease .25s; }
+  .Movie:hover {
+    background-size: 150%; }
+    .Movie:hover .overlay {
+      opacity: 1;
+      pointer-events: all; }
+      .Movie:hover .overlay .plot {
+        margin-top: 10px;
+        opacity: 1; }
+      .Movie:hover .overlay .title {
+        opacity: 1; }
+      .Movie:hover .overlay .rating {
+        opacity: 1; }
+      .Movie:hover .overlay .ListToggle {
+        opacity: 1; }
+
+.flex-carousel {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row; }
+
+.ListToggle {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  border-radius: 32px;
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  opacity: 0; }
+  .ListToggle:hover {
+    border: 2px solid #ffffff; }
+    .ListToggle:hover div {
+      top: -32px; }
+  .ListToggle[data-toggled="true"] {
+    background: #e50914;
+    border: 2px solid #e50914; }
+    .ListToggle[data-toggled="true"] div {
+      top: -32px; }
+  .ListToggle div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 64px;
+    width: 32px;
+    -webkit-transition: .125s ease;
+    transition: .125s ease; }
+    .ListToggle div i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      width: 32px; }
+</style><style data-styled="" data-styled-version="4.0.0">
+/* sc-component-id: sc-bdVaJa */
+
+/* sc-component-id: sc-bwzfXH */
+
+/* sc-component-id: sc-htpNat */
+.sc-htpNat {} .cMMWXQ{width:100%;overflow:hidden;}
+/* sc-component-id: sc-bxivhb */
+.sc-bxivhb {} .intlDC{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:0 0 20px 20px;-webkit-transition:-webkit-transform 1s ease;-webkit-transition:transform 1s ease;transition:transform 1s ease;-webkit-transform:translateX(calc(-80% - 20px));-ms-transform:translateX(calc(-80% - 20px));transform:translateX(calc(-80% - 20px));}.kQxLKj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:0 0 20px 20px;-webkit-transition:none;transition:none;-webkit-transform:translateX(0%);-ms-transform:translateX(0%);transform:translateX(0%);}.hbCrlO{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:0 0 20px 20px;-webkit-transition:none;transition:none;-webkit-transform:translateX(calc(2 * (-80% - 20px)));-ms-transform:translateX(calc(2 * (-80% - 20px)));transform:translateX(calc(2 * (-80% - 20px)));}
+/* sc-component-id: sc-ifAKCX */
+.sc-ifAKCX {} .gRyHPi{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:0;-ms-flex-order:0;order:0;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.hwZmpi{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:1;-ms-flex-order:1;order:1;opacity:1;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.gtdquY{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:2;-ms-flex-order:2;order:2;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.gruKNq{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:3;-ms-flex-order:3;order:3;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.diuApx{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:4;-ms-flex-order:4;order:4;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.jWyToR{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:5;-ms-flex-order:5;order:5;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.dfRqaK{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:6;-ms-flex-order:6;order:6;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.jYtOJh{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:7;-ms-flex-order:7;order:7;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.kzNdIJ{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:8;-ms-flex-order:8;order:8;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.ifIPxz{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:9;-ms-flex-order:9;order:9;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.jkqFCT{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:10;-ms-flex-order:10;order:10;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.jfFJPq{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:11;-ms-flex-order:11;order:11;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.hZSKUN{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:12;-ms-flex-order:12;order:12;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.cyqYLm{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:13;-ms-flex-order:13;order:13;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.inzxTv{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:14;-ms-flex-order:14;order:14;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.jMDIWv{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:15;-ms-flex-order:15;order:15;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.fZzcs{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:16;-ms-flex-order:16;order:16;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.kwnCTH{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:17;-ms-flex-order:17;order:17;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.exNlcK{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:18;-ms-flex-order:18;order:18;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}.cYXmdb{-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;-webkit-flex-basis:80%;-ms-flex-preferred-size:80%;flex-basis:80%;margin-right:20px;-webkit-order:19;-ms-flex-order:19;order:19;opacity:0.5;-webkit-transition:opacity 1s ease;transition:opacity 1s ease;}
+/* sc-component-id: sc-EHOje */
+</style><style type="text/css" data-styled-components="enORLM" data-styled-components-is-local="true">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {}
+.enORLM{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:60px;}</style><style type="text/css">/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+} */
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+</style><script charset="utf-8" src="./React App_files/main.a59eae72d4017846b1a2.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.7200e12c831937bdc1f0.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.80c171bcb04930e88255.hot-update.js"></script></head>
+  <body data-gr-c-s-loaded="true">
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"><div><header class="Header flex-container sc-bdVaJa enORLM" id="flex-box" style="top: -80px;"><ul class="flex-left"><div id="navigator" class="Navigation"><nav><ul><li class="flex-item"><u>My List</u></li><li class="flex-item"><u>Add New Movie</u></li></ul></nav></div></ul><ul class="flex-center"><a href="http://localhost:3000/#"><li class="flex-item"><img src="./React App_files/logo.fe9d6fe0.png" class="Logo"></li><li class="flex-item"><img src="./React App_files/408x161-powered-by-rectangle-green-bb4301c10ddc749b4e79463811a68afebeae66ef43d17bcfd8ff0e60ded7ce99.png" class="moive-db"></li></a></ul><ul class="flex-right"><li class="flex-item"><div class="UserProfile"><div class="User"><div class="name"><a href="https://www.linkedin.com/in/tomer-levi/" target="_blank">Tomer Levi</a></div><div class="image"><img src="./React App_files/0" alt="profile"></div></div></div></li></ul></header><div id="hero" class="Hero" style="background-image: url(&quot;https://images.alphacoders.com/633/633643.jpg&quot;);"><div class="content"><img class="logo" src="./React App_files/narcos.logo.png" alt="narcos background"><h2>Season 2 now available</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id quam sapiente unde voluptatum alias vero debitis, magnam quis quod.</p><div class="button-wrapper"><a href="http://localhost:3000/#" class="Button" data-primary="true">Trailer</a><a href="http://localhost:3000/#" class="Button" data-primary="false">+ My list</a></div></div><div class="overlay"></div></div><div><button>Prev</button><button>Next</button><div><div class="sc-htpNat cMMWXQ"><div direction="prev" class="sc-bxivhb intlDC"><div order="0" class="sc-ifAKCX gRyHPi"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg&quot;);"><div class="overlay"><div class="title">Venom</div><div class="rating">6.7 / 10</div><div class="plot">When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego “Venom” to save his life.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="1" class="sc-ifAKCX hwZmpi"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/wrFpXMNBRj2PBiN4Z5kix51XaIZ.jpg&quot;);"><div class="overlay"><div class="title">A Star Is Born</div><div class="rating">7.6 / 10</div><div class="plot">Seasoned musician Jackson Maine discovers—and falls in love with—struggling artist Ally. She has just about given up on her dream to make it big as a singer—until Jack coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="2" class="sc-ifAKCX gtdquY"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/rv1AWImgx386ULjcf62VYaW8zSt.jpg&quot;);"><div class="overlay"><div class="title">Ant-Man and the Wasp</div><div class="rating">6.9 / 10</div><div class="plot">Just when his time under house arrest is about to end, Scott Lang puts again his freedom at risk to help Hope van Dyne and Dr. Hank Pym dive into the quantum realm and try to accomplish, against time and any chance of success, a very dangerous rescue mission.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="3" class="sc-ifAKCX gruKNq"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/wMq9kQXTeQCHUZOG4fAe5cAxyUA.jpg&quot;);"><div class="overlay"><div class="title">The Predator</div><div class="rating">5.3 / 10</div><div class="plot">From the outer reaches of space to the small-town streets of suburbia, the hunt comes home. Now, the universe’s most lethal hunters are stronger, smarter and deadlier than ever before, having genetically upgraded themselves with DNA from other species. When a young boy accidentally triggers their return to Earth, only a ragtag crew of ex-soldiers and a disgruntled science teacher can prevent the end of the human race.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="4" class="sc-ifAKCX diuApx"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg&quot;);"><div class="overlay"><div class="title">Avengers: Infinity War</div><div class="rating">8.3 / 10</div><div class="plot">As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="5" class="sc-ifAKCX jWyToR"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/i91mfvFcPPlaegcbOyjGgiWfZzh.jpg&quot;);"><div class="overlay"><div class="title">First Man</div><div class="rating">6.7 / 10</div><div class="plot">A look at the life of the astronaut, Neil Armstrong, and the legendary space mission that led him to become the first man to walk on the Moon on July 20, 1969.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="6" class="sc-ifAKCX dfRqaK"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/r6pPUVUKU5eIpYj4oEzidk5ZibB.jpg&quot;);"><div class="overlay"><div class="title">劇場版 七つの大罪 天空の囚われ人</div><div class="rating">5.9 / 10</div><div class="plot">Traveling in search of the rare ingredient, “sky fish”  Meliodas and Hawk arrive at a palace that floats above the clouds. The people there are busy preparing a ceremony, meant to protect their home from a ferocious beast that awakens once every 3,000 years. But before the ritual is complete, the Six Knights of Black—a Demon Clan army—removes the seal on the beast, threatening the lives of everyone in the Sky Palace.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="7" class="sc-ifAKCX jYtOJh"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/sFC1ElvoKGdHJIWRpNB3xWJ9lJA.jpg&quot;);"><div class="overlay"><div class="title">The Nun</div><div class="rating">5.8 / 10</div><div class="plot">When a young nun at a cloistered abbey in Romania takes her own life, a priest with a haunted past and a novitiate on the threshold of her final vows are sent by the Vatican to investigate. Together they uncover the order’s unholy secret. Risking not only their lives but their faith and their very souls, they confront a malevolent force in the form of the same demonic nun that first terrorized audiences in “The Conjuring 2,” as the abbey becomes a horrific battleground between the living and the damned.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="8" class="sc-ifAKCX kzNdIJ"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/tCBxnZwLiY1BOKw3tH6AxHZdqPh.jpg&quot;);"><div class="overlay"><div class="title">Johnny English Strikes Again</div><div class="rating">6.4 / 10</div><div class="plot">Disaster strikes when a criminal mastermind reveals the identities of all active undercover agents in Britain. The secret service can now rely on only one man—Johnny English. Currently teaching at a minor prep school, Johnny springs back into action to find the mysterious hacker. For this mission to succeed, he’ll need all of his skills—what few he has—as the man with yesterday’s analogue methods faces off against tomorrow’s digital technology.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="9" class="sc-ifAKCX ifIPxz"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/uxzzxijgPIY7slzFvMotPv8wjKA.jpg&quot;);"><div class="overlay"><div class="title">Black Panther</div><div class="rating">7.4 / 10</div><div class="plot">King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without. Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister, members of the Dora Milaje (the Wakandan 'special forces') and an American secret agent, to prevent Wakanda from being dragged into a world war.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="10" class="sc-ifAKCX jkqFCT"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg&quot;);"><div class="overlay"><div class="title">Jurassic World: Fallen Kingdom</div><div class="rating">6.5 / 10</div><div class="plot">Three years after the demise of Jurassic World, a volcanic eruption threatens the remaining dinosaurs on the isla Nublar, so Claire Dearing, the former park manager, recruits Owen Grady to help prevent the extinction of the dinosaurs once again.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="11" class="sc-ifAKCX jfFJPq"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/2lIr27lBdxCpzYDl6WUHzzD6l6H.jpg&quot;);"><div class="overlay"><div class="title">The Spy Who Dumped Me</div><div class="rating">6.7 / 10</div><div class="plot">Audrey and Morgan are best friends who unwittingly become entangled in an international conspiracy when one of the women discovers the boyfriend who dumped her was actually a spy.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="12" class="sc-ifAKCX hZSKUN"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/mruUFlrVKiL994y3vvQBT8R2Vnf.jpg&quot;);"><div class="overlay"><div class="title">ராட்சசன்</div><div class="rating">8 / 10</div><div class="plot">A serial killer is murdering school girls, and a newbie cop has to track him down before the victim count increases.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="13" class="sc-ifAKCX cyqYLm"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/3IGbjc5ZC5yxim5W0sFING2kdcz.jpg&quot;);"><div class="overlay"><div class="title">Solo: A Star Wars Story</div><div class="rating">6.7 / 10</div><div class="plot">Through a series of daring escapades deep within a dark and dangerous criminal underworld, Han Solo meets his mighty future copilot Chewbacca and encounters the notorious gambler Lando Calrissian.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="14" class="sc-ifAKCX inzxTv"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg&quot;);"><div class="overlay"><div class="title">Deadpool 2</div><div class="rating">7.5 / 10</div><div class="plot">Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="15" class="sc-ifAKCX jMDIWv"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/4nKoB6wMVXfsYgRZK5lHZ5VMQ6J.jpg&quot;);"><div class="overlay"><div class="title">Smallfoot</div><div class="rating">6.5 / 10</div><div class="plot">A bright young yeti finds something he thought didn't exist—a human. News of this “smallfoot” throws the simple yeti community into an uproar over what else might be out there in the big world beyond their snowy village.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="16" class="sc-ifAKCX fZzcs"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/eyWICPcxOuTcDDDbTMOZawoOn8d.jpg&quot;);"><div class="overlay"><div class="title">The Meg</div><div class="rating">6 / 10</div><div class="plot">A deep sea submersible pilot revisits his past fears in the Mariana Trench, and accidentally unleashes the seventy foot ancestor of the Great White Shark believed to be extinct.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="17" class="sc-ifAKCX kwnCTH"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/iNtFgXqXPRMkm1QO8CHn5sHfUgE.jpg&quot;);"><div class="overlay"><div class="title">Bad Times at the El Royale</div><div class="rating">6.7 / 10</div><div class="plot">Seven strangers, each with a secret to bury, meet at Lake Tahoe's El Royale, a rundown hotel with a dark past in 1969. Over the course of one fateful night, everyone will have a last shot at redemption.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="18" class="sc-ifAKCX exNlcK"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/dT1XzjxRDR56xOm4Ph0INV4EmWJ.jpg&quot;);"><div class="overlay"><div class="title">Mile 22</div><div class="rating">5.5 / 10</div><div class="plot">A CIA field officer and an Indonesian police officer are forced to work together in confronting political corruption. An informant must be moved twenty-two miles to safety.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div><div order="19" class="sc-ifAKCX cYXmdb"><div class="Movie" style="background-image: url(&quot;http://image.tmdb.org/t/p/original/8bcpki9GfXdXj9esFpPtlate8v0.jpg&quot;);"><div class="overlay"><div class="title">Goosebumps 2: Haunted Halloween</div><div class="rating">6.4 / 10</div><div class="plot">Two boys face an onslaught from witches, monsters, ghouls and a talking dummy after they discover a mysterious book by author R. L. Stine.</div><div data-toggled="false" class="ListToggle"><i class="fa fa-pen-square"></i><i class="fa fa-trash-alt"></i></div></div></div></div></div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/1.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.608345e3300ed3daa997.hot-update.js"></script>
+
+</body></html>

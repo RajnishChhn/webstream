@@ -1,0 +1,498 @@
+// Fonts
+
+// Variables
+$font: 'Lato', sans-serif;
+
+// Colors
+$red: #e50914;
+$black: #221f1f;
+$blackblack: #000000;
+$grey: #f5f5f1;
+$white: #ffffff;
+
+// General
+body {
+	background: #221f1f;
+	color: $white;
+	font-family: $font;
+}
+
+a:hover {
+ cursor:pointer;
+}
+
+i:hover {
+ cursor:pointer;
+}
+
+ul {
+	list-style-type:none;
+}
+.flex-container{
+  display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+.flex-left {
+  justify-content: flex-start;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-right {
+  justify-content: flex-end;
+	padding-inline-end: 40px;
+}
+// Typography
+
+h2 {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.4;
+	margin-bottom: 1em;
+}
+
+p {
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 1.6;
+	margin-bottom: 1em;
+}
+
+////////////
+// MIXINS //
+////////////
+@mixin generate-gradient($color,$amount) {
+	background: -moz-linear-gradient(top, rgba($color,$amount) 0%, rgba($color,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba($color,$amount) 0%,rgba($color,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba($color,$amount) 0%,rgba($color,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+////////////////
+// COMPONENTS //
+////////////////
+
+// Header
+.Header {
+	@include generate-gradient($blackblack, 1);
+  background: linear-gradient(to bottom, #3a3a3a 0%, rgba(0, 0, 0, 0) 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	box-sizing: border-box;
+	z-index: 5;
+  padding-inline-start: 0px;
+}
+
+.carousel {
+	height: 90px;
+	padding-bottom: 20px;
+	position: fixed;
+}
+
+// Logo
+.Logo {
+	width: 200px;
+	height: 25px;
+}
+
+.moive-db {
+	width: 80px;
+	height: 25px;
+}
+
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: unset;
+}
+
+.swipeable-dimensions {
+	width: 90px;
+}
+
+// Navigation
+.Navigation {
+	ul {
+		display: flex;
+		height: 37px;
+		align-items: center;
+		padding: 0 10px;
+
+		li {
+			font-weight: 600;
+			font-family: courier;
+			list-style: none;
+			padding: 7px 10px;
+			font-size: 14px;
+			transition: background .125s ease;
+			border-radius: 3px;
+
+			&:hover {
+				color: #00cf72;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+// UserProfile
+.UserProfile {
+	margin-left: auto;
+
+	// User
+	.User {
+		display: flex;
+
+		.image {
+			border-radius: 44px;
+			margin-left: 10px;
+			overflow: hidden;
+			width: 44px;
+			height: 44px;
+			box-sizing: border-box;
+			border: 3px solid transparent;
+			transition: border .125s ease;
+
+			img {
+				width: 100%;
+				display: block;
+			}
+		}
+
+		.name {
+			align-items: center;
+			display: flex;
+			font-size: 18px;
+			font-weight: 300;
+			height: 44px;
+		}
+
+		&:hover {
+			cursor: pointer;
+			.image {
+				border: 3px solid #00cf72;
+			}
+		}
+	}
+
+	// UserProfile-menu
+	.UserProfile-menu {
+		display: none;
+	}
+}
+
+// Hero Image
+.Hero {
+	width: 100%;
+	position: relative;
+	background-size: cover;
+  height: 70vh;
+
+	.content {
+		position: relative;
+		z-index: 4;
+		width: 500px;
+		left: 10vw;
+		top: 10vw;
+
+		.logo {
+			max-width: 400px;
+			display: block;
+			position: relative;
+			left: -5px;
+		}
+
+		p {
+			width: 100%;
+		}
+
+		.button-wrapper {
+			display: flex;
+			width: 400px;
+			margin-top: 30px;
+
+			.Button:first-child {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.overlay {
+		@include generate-gradient($black, 1);
+		height: 100%;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transform: rotate(180deg);
+	}
+}
+.carousel-nav {
+	display: inline-block;
+}
+
+.carousel-slot {
+	flex-basis: 80%;
+	margin-right: 20px;
+	transition: opacity 1s ease;
+}
+
+.flex-nav {
+	position: fixed;
+	overflow: hidden;
+}
+// Button
+.Button {
+	background: transparent;
+	display: flex;
+	height: 44px;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: $white;
+	padding: 20px;
+	box-sizing: border-box;
+	border: 2px solid rgba($grey, .2);
+	border-radius: 44px;
+	font-size: 14px;
+	font-weight: 600;
+	transition: border .125s ease, background .125s ease;
+
+	&:hover {
+		border: 2px solid $grey;
+	}
+
+	&[data-primary='true'] {
+	    border: 2px solid #00cf72;
+	    color: #00cf72;
+
+		&:hover {
+			background: #00cf72;
+			color: black;
+		}
+	}
+
+	&[cancel='true'] {
+			border: 2px solid #fc3131;
+			color: #00cf72;
+
+		&:hover {
+			background: #fc3131;
+			color: black;
+		}
+	}
+
+}
+
+// TitleList
+.Hero .TitleList:nth-child(3) {
+	margin-top: -10vw;
+	position: relative;
+	z-index: 4;
+}
+
+// Hack for first after Hero
+.TitleList {
+	padding: 20px 40px;
+	box-sizing: border-box;
+	transition: opacity 3s ease;
+	opacity: 0;
+
+	.Title {
+		@extend h2;
+	}
+
+	.titles-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 20px 0;
+
+		width: calc(100vw - 80px);
+		box-sizing: border-box;
+		justify-content: space-between;
+
+	}
+
+	// Animation
+
+	&[data-loaded='true'] {
+		opacity: 1;
+	}
+}
+
+// Movie
+.Movie {
+  width: 300px;
+	flex: auto;
+	text-align: center;
+  color: white;
+	flex: 1 0 auto;
+	background-position: center;
+  background-size: 40%;
+	height: 300px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	transition: background 1s ease;
+
+	&:nth-child(n+6) {
+		margin-top: 20px;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	.overlay {
+		padding: 20px;
+		position: relative;
+		height: 100%;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity .125s ease;
+
+		.title {
+			font-size: 22px;
+			font-weight: 200;
+			opacity: 0;
+			transition: opacity .25s ease;
+		}
+
+		.rating {
+			font-size: 14px;
+			opacity: 0;
+
+			transition: opacity .25s ease .125s;
+		}
+	}
+
+	&:hover {
+		background-size: 60%;
+
+		.overlay {
+			opacity: 1;
+			pointer-events: all;
+
+			.title {
+				opacity: 1;
+				padding-top: 120px;
+			}
+
+			.rating {
+				opacity: 1;
+			}
+
+			i {
+				transition: opacity 1.2s ease;
+			}
+
+			.ListToggle {
+				margin-right: 45px;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.flex-carousel {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+// Item [ANIMATION]
+
+// ListToggle
+.EditButton {
+	$size: 32px;
+	width: $size;
+	height: $size;
+	font-size: $size / 2;
+	overflow: hidden;
+	position: absolute;
+	right: 65px;
+	top: 25px;
+	opacity: 1;
+
+	&:hover {
+		div {
+			top: - $size;
+		}
+	}
+
+	div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: $size * 2;
+		width: $size;
+		transition: .125s ease;
+
+		i {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: $size;
+			width: $size;
+		}
+	}
+}
+
+i {
+	padding: 10px;
+}
+
+.arrows{
+	position: fixed;
+	padding-top: 90px;
+  width: -webkit-fill-available;
+}
+// ListToggle
+.DeleteButton {
+	$size: 32px;
+	width: $size;
+	height: $size;
+	font-size: $size / 2;
+	overflow: hidden;
+	position: absolute;
+	right: 105px;
+	top: 25px;
+	opacity: 1;
+
+	&:hover {
+		div {
+			top: - $size;
+		}
+	}
+
+	div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: $size * 2;
+		width: $size;
+		transition: .125s ease;
+
+		i {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: $size;
+			width: $size;
+			transition: .6s ease;
+		}
+	}
+}
+
+.EditMovie {
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	padding: 100px;
+	background-color: red;
+}
